@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="kc2-ns-fm0">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01e-RO-zMe">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
@@ -7,10 +7,11 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Navigation Controller-->
+        <!--Chien-->
         <scene sceneID="AbI-O4-cdg">
             <objects>
                 <navigationController id="kc2-ns-fm0" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Chien" image="Dog" id="7lK-Ki-gq3"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="xYd-lD-Peh">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -43,7 +44,7 @@
                                 <rect key="frame" x="89.5" y="120" width="235" height="67"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SGg-7C-vP8">
-                                <rect key="frame" x="86" y="365" width="242" height="229"/>
+                                <rect key="frame" x="86" y="316" width="242" height="229"/>
                                 <state key="normal" image="Paw"/>
                                 <connections>
                                     <segue destination="ajR-Bq-ba6" kind="show" id="E1z-KR-u8l"/>
@@ -74,7 +75,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="clip" translatesAutoresizingMaskIntoConstraints="NO" id="JMD-dZ-sWY">
-                                <rect key="frame" x="8" y="716" width="398" height="48"/>
+                                <rect key="frame" x="8" y="667" width="398" height="48"/>
                                 <color key="backgroundColor" red="0.57919406890000003" green="0.1280144453" blue="0.57268613580000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <state key="normal" title="Valider">
@@ -99,6 +100,55 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="O0G-SU-H9K" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="805.79710144927537" y="-133.25892857142856"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="PiV-DX-Pdz">
+            <objects>
+                <tabBarController id="01e-RO-zMe" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="hGe-Qd-r47">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="selectedImageTintColor" red="0.57919406890000003" green="0.1280144453" blue="0.57268613580000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="BFW-fT-jFa" kind="relationship" relationship="viewControllers" id="8Nu-O0-gFt"/>
+                        <segue destination="kc2-ns-fm0" kind="relationship" relationship="viewControllers" id="erS-LR-9sI"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AEn-q7-MCa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1933" y="285"/>
+        </scene>
+        <!--Chat-->
+        <scene sceneID="IKL-rt-lic">
+            <objects>
+                <viewController id="BFW-fT-jFa" customClass="CatWelcomeViewController" customModule="miawouf" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="zyY-eP-hI8">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bonjour Les chats !!!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zft-zo-vjj">
+                                <rect key="frame" x="10" y="54" width="394" height="749"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="31"/>
+                                <color key="textColor" red="1" green="0.2527923882" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="WFq-8U-oh2"/>
+                        <color key="backgroundColor" red="0.0" green="0.99143940210000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="zft-zo-vjj" firstAttribute="top" secondItem="WFq-8U-oh2" secondAttribute="top" constant="10" id="0OK-VS-FVv"/>
+                            <constraint firstItem="WFq-8U-oh2" firstAttribute="trailing" secondItem="zft-zo-vjj" secondAttribute="trailing" constant="10" id="B5F-vk-TAy"/>
+                            <constraint firstItem="WFq-8U-oh2" firstAttribute="bottom" secondItem="zft-zo-vjj" secondAttribute="bottom" constant="10" id="rl9-al-x6x"/>
+                            <constraint firstItem="zft-zo-vjj" firstAttribute="leading" secondItem="WFq-8U-oh2" secondAttribute="leading" constant="10" id="zLM-eI-azI"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Chat" image="Cat" id="QqD-nE-QSM"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Nwl-km-IWB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-869" y="561"/>
         </scene>
         <!--Success View Controller-->
         <scene sceneID="c8v-EN-cYQ">
@@ -162,6 +212,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Cat" width="25" height="25"/>
+        <image name="Dog" width="25" height="25"/>
         <image name="Miawouf" width="235" height="67"/>
         <image name="Paw" width="242" height="229"/>
     </resources>

@@ -10,6 +10,7 @@
 		701EF8042819CD3B0027CE93 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 701EF8032819CD3B0027CE93 /* WelcomeViewController.swift */; };
 		701EF8092819CF8B0027CE93 /* FormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 701EF8082819CF8B0027CE93 /* FormViewController.swift */; };
 		701EF8112819D7CB0027CE93 /* SuccessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 701EF8102819D7CB0027CE93 /* SuccessViewController.swift */; };
+		701EF8162819EAF30027CE93 /* CatWelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 701EF8152819EAF30027CE93 /* CatWelcomeViewController.swift */; };
 		7022F68C2819B70E007A69A0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7022F68B2819B70E007A69A0 /* AppDelegate.swift */; };
 		7022F68E2819B70E007A69A0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7022F68D2819B70E007A69A0 /* SceneDelegate.swift */; };
 		7022F6932819B70E007A69A0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7022F6912819B70E007A69A0 /* Main.storyboard */; };
@@ -41,6 +42,7 @@
 		701EF8032819CD3B0027CE93 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		701EF8082819CF8B0027CE93 /* FormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormViewController.swift; sourceTree = "<group>"; };
 		701EF8102819D7CB0027CE93 /* SuccessViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessViewController.swift; sourceTree = "<group>"; };
+		701EF8152819EAF30027CE93 /* CatWelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatWelcomeViewController.swift; sourceTree = "<group>"; };
 		7022F6882819B70E007A69A0 /* miawouf.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = miawouf.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7022F68B2819B70E007A69A0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7022F68D2819B70E007A69A0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -139,6 +141,7 @@
 				701EF8032819CD3B0027CE93 /* WelcomeViewController.swift */,
 				701EF8082819CF8B0027CE93 /* FormViewController.swift */,
 				701EF8102819D7CB0027CE93 /* SuccessViewController.swift */,
+				701EF8152819EAF30027CE93 /* CatWelcomeViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -295,6 +298,7 @@
 				701EF8042819CD3B0027CE93 /* WelcomeViewController.swift in Sources */,
 				7022F68C2819B70E007A69A0 /* AppDelegate.swift in Sources */,
 				701EF8092819CF8B0027CE93 /* FormViewController.swift in Sources */,
+				701EF8162819EAF30027CE93 /* CatWelcomeViewController.swift in Sources */,
 				701EF8112819D7CB0027CE93 /* SuccessViewController.swift in Sources */,
 				7022F68E2819B70E007A69A0 /* SceneDelegate.swift in Sources */,
 			);
