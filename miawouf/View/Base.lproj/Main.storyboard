@@ -101,6 +101,23 @@
             </objects>
             <point key="canvasLocation" x="805.79710144927537" y="-133.25892857142856"/>
         </scene>
+        <!--Chat-->
+        <scene sceneID="Vdh-ZV-03g">
+            <objects>
+                <navigationController id="fle-OX-7UK" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Chat" image="Cat" id="Wqg-fA-IIs"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="oDu-8q-vhX">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BFW-fT-jFa" kind="relationship" relationship="rootViewController" id="Srn-G0-HEd"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="t5L-L4-dgm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-897" y="640"/>
+        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="PiV-DX-Pdz">
             <objects>
@@ -112,15 +129,15 @@
                         <color key="selectedImageTintColor" red="0.57919406890000003" green="0.1280144453" blue="0.57268613580000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBar>
                     <connections>
-                        <segue destination="BFW-fT-jFa" kind="relationship" relationship="viewControllers" id="8Nu-O0-gFt"/>
                         <segue destination="kc2-ns-fm0" kind="relationship" relationship="viewControllers" id="erS-LR-9sI"/>
+                        <segue destination="fle-OX-7UK" kind="relationship" relationship="viewControllers" id="Zbc-0I-eFs"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AEn-q7-MCa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1933" y="285"/>
         </scene>
-        <!--Chat-->
+        <!--Welcome-->
         <scene sceneID="IKL-rt-lic">
             <objects>
                 <viewController id="BFW-fT-jFa" customClass="CatWelcomeViewController" customModule="miawouf" customModuleProvider="target" sceneMemberID="viewController">
@@ -128,27 +145,63 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bonjour Les chats !!!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zft-zo-vjj">
-                                <rect key="frame" x="10" y="54" width="394" height="749"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="31"/>
-                                <color key="textColor" red="1" green="0.2527923882" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4cA-UC-fgC">
+                                <rect key="frame" x="86" y="424" width="242" height="229"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="Paw"/>
+                                <connections>
+                                    <segue destination="TkF-69-i9z" kind="show" id="Q89-4F-rwH"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="Miawouf" translatesAutoresizingMaskIntoConstraints="NO" id="zaz-NS-8Ot">
+                                <rect key="frame" x="89.5" y="194" width="235" height="67"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="WFq-8U-oh2"/>
                         <color key="backgroundColor" red="0.0" green="0.99143940210000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="zft-zo-vjj" firstAttribute="top" secondItem="WFq-8U-oh2" secondAttribute="top" constant="10" id="0OK-VS-FVv"/>
-                            <constraint firstItem="WFq-8U-oh2" firstAttribute="trailing" secondItem="zft-zo-vjj" secondAttribute="trailing" constant="10" id="B5F-vk-TAy"/>
-                            <constraint firstItem="WFq-8U-oh2" firstAttribute="bottom" secondItem="zft-zo-vjj" secondAttribute="bottom" constant="10" id="rl9-al-x6x"/>
-                            <constraint firstItem="zft-zo-vjj" firstAttribute="leading" secondItem="WFq-8U-oh2" secondAttribute="leading" constant="10" id="zLM-eI-azI"/>
-                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Chat" image="Cat" id="QqD-nE-QSM"/>
+                    <navigationItem key="navigationItem" title="Welcome" id="S8A-MM-0cT"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nwl-km-IWB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-869" y="561"/>
+            <point key="canvasLocation" x="-62" y="640"/>
+        </scene>
+        <!--Cat Form View Controller-->
+        <scene sceneID="eN7-Gq-xOh">
+            <objects>
+                <viewController id="TkF-69-i9z" customClass="CatFormViewController" customModule="miawouf" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8oS-0Q-SiR">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lTm-jx-nOb">
+                                <rect key="frame" x="8" y="755" width="398" height="48"/>
+                                <color key="backgroundColor" red="0.57919406890000003" green="0.1280144453" blue="0.57268613580000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <state key="normal" title="Valider">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="RrD-Yx-6kj" kind="presentation" id="YgK-58-FHf"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="DbX-YQ-3dk"/>
+                        <color key="backgroundColor" red="0.0" green="0.99143940210000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="lTm-jx-nOb" firstAttribute="leading" secondItem="DbX-YQ-3dk" secondAttribute="leading" constant="8" id="IPF-fV-p5E"/>
+                            <constraint firstItem="lTm-jx-nOb" firstAttribute="centerX" secondItem="8oS-0Q-SiR" secondAttribute="centerX" id="Q2l-Z6-OAg"/>
+                            <constraint firstItem="DbX-YQ-3dk" firstAttribute="trailing" secondItem="lTm-jx-nOb" secondAttribute="trailing" constant="8" id="Tml-oD-68G"/>
+                            <constraint firstItem="DbX-YQ-3dk" firstAttribute="bottom" secondItem="lTm-jx-nOb" secondAttribute="bottom" constant="10" id="YP9-6G-fro"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="CRW-9Z-9NY"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gvc-93-1Gh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="806" y="640"/>
         </scene>
         <!--Success View Controller-->
         <scene sceneID="c8v-EN-cYQ">
@@ -208,7 +261,67 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TGK-Uw-vv4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="odK-ey-r1T" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="805.79710144927537" y="-824.33035714285711"/>
+            <point key="canvasLocation" x="696" y="-824"/>
+        </scene>
+        <!--Cat Success View Controller-->
+        <scene sceneID="Vjr-1Z-fbe">
+            <objects>
+                <viewController modalPresentationStyle="fullScreen" id="RrD-Yx-6kj" customClass="CatSuccessViewController" customModule="miawouf" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="kWl-cM-gAa">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Miaou !   Vous avez bien ete ajouter a notre base de donnee.  Nous vous enverrons un SMS !!!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rw8-2h-Jpk">
+                                <rect key="frame" x="10" y="54" width="394" height="798"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="34"/>
+                                <color key="textColor" red="0.57919406890000003" green="0.1280144453" blue="0.57268613580000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yJG-iM-V9E">
+                                <rect key="frame" x="60" y="89" width="51" height="64"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="64" id="MJW-sJ-0HQ"/>
+                                    <constraint firstAttribute="width" constant="51" id="vpQ-lW-33Z"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                <state key="normal" title="X">
+                                    <color key="titleColor" red="0.57919406890000003" green="0.1280144453" blue="0.57268613580000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="dismiss:" destination="RrD-Yx-6kj" eventType="touchUpInside" id="WNE-11-CdO"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rK1-pb-COH">
+                                <rect key="frame" x="10" y="794" width="394" height="48"/>
+                                <color key="backgroundColor" red="0.57919406890000003" green="0.1280144453" blue="0.57268613580000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <state key="normal" title="Inscrire un autre chat">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="qak-gI-jkd" kind="unwind" unwindAction="unwindToWelcomeWithSegue:" id="Mvh-I8-AJr"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="ae2-UV-ejB"/>
+                        <color key="backgroundColor" red="0.0" green="0.99143940210000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="ae2-UV-ejB" firstAttribute="trailing" secondItem="rK1-pb-COH" secondAttribute="trailing" constant="10" id="Kqo-PQ-Jo2"/>
+                            <constraint firstItem="ae2-UV-ejB" firstAttribute="bottom" secondItem="rw8-2h-Jpk" secondAttribute="bottom" constant="10" id="N4g-VN-bRW"/>
+                            <constraint firstItem="rw8-2h-Jpk" firstAttribute="top" secondItem="ae2-UV-ejB" secondAttribute="top" constant="10" id="VNh-Fe-NOH"/>
+                            <constraint firstItem="yJG-iM-V9E" firstAttribute="leading" secondItem="ae2-UV-ejB" secondAttribute="leading" constant="60" id="YhB-su-GDB"/>
+                            <constraint firstItem="rw8-2h-Jpk" firstAttribute="leading" secondItem="ae2-UV-ejB" secondAttribute="leading" constant="10" id="cgO-FA-4md"/>
+                            <constraint firstItem="ae2-UV-ejB" firstAttribute="bottom" secondItem="rK1-pb-COH" secondAttribute="bottom" constant="20" id="cyU-io-3HE"/>
+                            <constraint firstItem="ae2-UV-ejB" firstAttribute="trailing" secondItem="rw8-2h-Jpk" secondAttribute="trailing" constant="10" id="fnQ-9w-cr1"/>
+                            <constraint firstItem="yJG-iM-V9E" firstAttribute="top" secondItem="ae2-UV-ejB" secondAttribute="top" constant="45" id="jc3-Ai-qDJ"/>
+                            <constraint firstItem="rK1-pb-COH" firstAttribute="leading" secondItem="ae2-UV-ejB" secondAttribute="leading" constant="10" id="yIY-08-h1r"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="I7E-3r-XLB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="qak-gI-jkd" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="806" y="1363"/>
         </scene>
     </scenes>
     <resources>

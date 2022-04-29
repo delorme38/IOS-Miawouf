@@ -19,6 +19,8 @@
 		7022F6A32819B710007A69A0 /* miawoufTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7022F6A22819B710007A69A0 /* miawoufTests.swift */; };
 		7022F6AE2819B710007A69A0 /* miawoufUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7022F6AD2819B710007A69A0 /* miawoufUITests.swift */; };
 		7022F6C32819C07A007A69A0 /* Races.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7022F6C22819C07A007A69A0 /* Races.swift */; };
+		706093DC281C5F7E00BB8FFC /* CatFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 706093DB281C5F7E00BB8FFC /* CatFormViewController.swift */; };
+		706093E1281C647700BB8FFC /* CatSuccessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 706093E0281C647700BB8FFC /* CatSuccessViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +59,8 @@
 		7022F6AD2819B710007A69A0 /* miawoufUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = miawoufUITests.swift; sourceTree = "<group>"; };
 		7022F6AF2819B710007A69A0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7022F6C22819C07A007A69A0 /* Races.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Races.swift; sourceTree = "<group>"; };
+		706093DB281C5F7E00BB8FFC /* CatFormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatFormViewController.swift; sourceTree = "<group>"; };
+		706093E0281C647700BB8FFC /* CatSuccessViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatSuccessViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,6 +146,8 @@
 				701EF8082819CF8B0027CE93 /* FormViewController.swift */,
 				701EF8102819D7CB0027CE93 /* SuccessViewController.swift */,
 				701EF8152819EAF30027CE93 /* CatWelcomeViewController.swift */,
+				706093DB281C5F7E00BB8FFC /* CatFormViewController.swift */,
+				706093E0281C647700BB8FFC /* CatSuccessViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -295,6 +301,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				7022F6C32819C07A007A69A0 /* Races.swift in Sources */,
+				706093E1281C647700BB8FFC /* CatSuccessViewController.swift in Sources */,
+				706093DC281C5F7E00BB8FFC /* CatFormViewController.swift in Sources */,
 				701EF8042819CD3B0027CE93 /* WelcomeViewController.swift in Sources */,
 				7022F68C2819B70E007A69A0 /* AppDelegate.swift in Sources */,
 				701EF8092819CF8B0027CE93 /* FormViewController.swift in Sources */,

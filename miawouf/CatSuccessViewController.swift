@@ -1,20 +1,26 @@
 //
-//  CatWelcomeViewController.swift
+//  CatSuccessViewController.swift
 //  miawouf
 //
-//  Created by Sébastien Delorme (Étudiant) on 2022-04-27.
+//  Created by Sébastien Delorme (Étudiant) on 2022-04-29.
 //
 
 import UIKit
 
-class CatWelcomeViewController: UIViewController {
+class CatSuccessViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
-    @IBAction func unwindToWelcome(segue:UIStoryboardSegue) { }
+    
+    
+    @IBAction func dismiss(_ sender: Any) {
+        dismiss(animated: true)
+    }
+    
+
     /*
     // MARK: - Navigation
 
