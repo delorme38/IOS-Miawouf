@@ -6,7 +6,23 @@
 //
 
 import UIKit
+extension FormViewController: UIPickerViewDataSource {
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return dogRaces.count
+    }
+    
 
+}
+
+extension FormViewController: UIPickerViewDelegate {
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return dogRaces[row]
+    }
+}
 class FormViewController: UIViewController {
 
     override func viewDidLoad() {
@@ -15,7 +31,13 @@ class FormViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-
+    @IBAction func nom(_ sender: Any) {
+    }
+    @IBAction func telephone(_ sender: Any) {
+    }
+    
+    @IBAction func dismissKeyboard(_ sender: Any) {
+    }
     /*
     // MARK: - Navigation
 
