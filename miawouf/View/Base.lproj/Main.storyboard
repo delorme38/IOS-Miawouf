@@ -373,6 +373,9 @@
                             <constraint firstItem="GoS-0d-3M0" firstAttribute="trailing" secondItem="NTC-b3-Bkf" secondAttribute="trailing" constant="10" id="hMc-9c-Qrz"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="successViewText" destination="NTC-b3-Bkf" id="Knw-gS-31S"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TGK-Uw-vv4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="odK-ey-r1T" userLabel="Exit" sceneMemberID="exit"/>

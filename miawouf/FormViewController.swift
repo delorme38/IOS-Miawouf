@@ -76,31 +76,28 @@ class FormViewController: UIViewController {
     }
     
     @IBAction func validate(_ sender: Any) {
-        createPetObject()
+        let pet = createPetObject()
+        performSegue(withIdentifier: "segueToSuccess", sender: pet)
+
     }
     
-    private func createPetObject(){
+    private func createPetObject() -> Pet {
         let name = nomTextField.text
-
         let phone = telephoneTextField.text
-        
         let hasMajority = majoritySwitch.isOn
-        
         let gender: Pet.Gender = (genderSegmentedControl.selectedSegmentIndex == 0) ? .male : .female
-        
         let raceIndex = racePickerView.selectedRow(inComponent: 0)
-        
         let race = dogRaces[raceIndex]
-        
         let dog = Pet(name: name, hasMajority: hasMajority, phone: phone, race: race, gender: gender)
+        return dog
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 
-       if segue.identifier == "segueToSuccess" {
-
-          let successVC = segue.destination as? SuccessViewController
-
+        if segue.identifier == "segueToSuccess" {
+            let successVC = segue.destination as? SuccessViewController
+            let pet = sender as? Pet
+            successVC?.dog = pet
        }
 
     }
