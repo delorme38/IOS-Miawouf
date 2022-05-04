@@ -82,7 +82,7 @@
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="65c-63-JYB" kind="presentation" id="I2k-lP-rUb"/>
+                                    <action selector="validate:" destination="ajR-Bq-ba6" eventType="touchUpInside" id="yGS-wb-dLB"/>
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="2WW-xG-gKr" userLabel="Main">
@@ -101,6 +101,7 @@
                                         <textInputTraits key="textInputTraits"/>
                                         <connections>
                                             <action selector="nom:" destination="ajR-Bq-ba6" eventType="editingDidEnd" id="b6g-Sd-Xwn"/>
+                                            <outlet property="delegate" destination="ajR-Bq-ba6" id="SNI-sK-pB5"/>
                                         </connections>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sexe" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a4p-tb-Dqy">
@@ -153,6 +154,7 @@
                                                         <textInputTraits key="textInputTraits" textContentType="tel"/>
                                                         <connections>
                                                             <action selector="telephone:" destination="ajR-Bq-ba6" eventType="editingDidEnd" id="1lR-xC-xr9"/>
+                                                            <outlet property="delegate" destination="ajR-Bq-ba6" id="9n2-uQ-BYD"/>
                                                         </connections>
                                                     </textField>
                                                 </subviews>
@@ -197,11 +199,19 @@
                         </connections>
                     </view>
                     <navigationItem key="navigationItem" id="7Jx-f5-PQF"/>
+                    <connections>
+                        <outlet property="genderSegmentedControl" destination="YUw-yx-lRd" id="U9t-qz-6qz"/>
+                        <outlet property="majoritySwitch" destination="mJg-00-CKP" id="yf4-fh-vY2"/>
+                        <outlet property="nomTextField" destination="hSL-ic-5tc" id="cUT-mH-4F9"/>
+                        <outlet property="racePickerView" destination="DIK-kN-bEb" id="wNU-eW-JU6"/>
+                        <outlet property="telephoneTextField" destination="72U-fB-wWd" id="Ziy-mj-lSi"/>
+                        <segue destination="65c-63-JYB" kind="presentation" identifier="segueToSuccess" id="oN3-hd-9Pc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="O0G-SU-H9K" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="Z4K-DK-TgH">
                     <connections>
-                        <action selector="tap:" destination="ajR-Bq-ba6" id="aWT-y6-n7f"/>
+                        <action selector="dismissKeyboard:" destination="ajR-Bq-ba6" id="H9e-Qt-vfi"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
@@ -317,12 +327,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" Woof !   Vous avez bien ete ajouter a notre base de donnee.  Nous vous enverrons un SMS !!!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NTC-b3-Bkf">
-                                <rect key="frame" x="10" y="54" width="394" height="798"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="34"/>
-                                <color key="textColor" red="0.57919406890000003" green="0.1280144453" blue="0.57268613580000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w4r-ze-iIF">
                                 <rect key="frame" x="60" y="89" width="51" height="64"/>
                                 <constraints>
@@ -348,6 +352,12 @@
                                     <segue destination="odK-ey-r1T" kind="unwind" unwindAction="unwindToWelcomeWithSegue:" id="DB9-8I-Xm4"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text=" Woof !   Vous avez bien ete ajouter a notre base de donnee.  Nous vous enverrons un SMS !!!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NTC-b3-Bkf">
+                                <rect key="frame" x="10" y="49" width="394" height="798"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="34"/>
+                                <color key="textColor" red="0.57919406890000003" green="0.1280144453" blue="0.57268613580000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="GoS-0d-3M0"/>
                         <color key="backgroundColor" red="0.0" green="0.99143940210000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

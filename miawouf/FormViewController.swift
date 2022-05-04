@@ -6,6 +6,7 @@
 //
 
 import UIKit
+
 extension FormViewController: UIPickerViewDataSource {
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
@@ -14,8 +15,13 @@ extension FormViewController: UIPickerViewDataSource {
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         return dogRaces.count
     }
-    
+}
 
+extension FormViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
 }
 
 extension FormViewController: UIPickerViewDelegate {
@@ -23,11 +29,13 @@ extension FormViewController: UIPickerViewDelegate {
         return dogRaces[row]
     }
 }
+
 class FormViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardAppear(_:)), name: UIViewController.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardDisappear(_:)), name: UIViewController.keyboardWillHideNotification, object: nil)
         // Do any additional setup after loading the view.
     }
     
@@ -36,8 +44,67 @@ class FormViewController: UIViewController {
     @IBAction func telephone(_ sender: Any) {
     }
     
+    @IBOutlet weak var nomTextField: UITextField!
+    
+    @IBOutlet weak var telephoneTextField: UITextField!
+    
+    @IBOutlet weak var racePickerView: UIPickerView!
+    
+    @IBOutlet weak var majoritySwitch: UISwitch!
+    
+    @IBOutlet weak var genderSegmentedControl: UISegmentedControl!
+    
     @IBAction func dismissKeyboard(_ sender: Any) {
+        nomTextField.resignFirstResponder()
+
+        telephoneTextField.resignFirstResponder()
     }
+    
+    
+    @objc func keyboardAppear(_ notification: Notification) {
+            guard let frame = notification.userInfo?[UIViewController.keyboardFrameEndUserInfoKey] as? NSValue else { return }
+            let keyboardFrame = frame.cgRectValue
+            if self.view.frame.origin.y == 0 {
+                self.view.frame.origin.y -= keyboardFrame.height
+            }
+        }
+
+    @objc func keyboardDisappear(_ notification: Notification) {
+        if self.view.frame.origin.y != 0 {
+            self.view.frame.origin.y = 0
+        }
+    }
+    
+    @IBAction func validate(_ sender: Any) {
+        createPetObject()
+    }
+    
+    private func createPetObject(){
+        let name = nomTextField.text
+
+        let phone = telephoneTextField.text
+        
+        let hasMajority = majoritySwitch.isOn
+        
+        let gender: Pet.Gender = (genderSegmentedControl.selectedSegmentIndex == 0) ? .male : .female
+        
+        let raceIndex = racePickerView.selectedRow(inComponent: 0)
+        
+        let race = dogRaces[raceIndex]
+        
+        let dog = Pet(name: name, hasMajority: hasMajority, phone: phone, race: race, gender: gender)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+
+       if segue.identifier == "segueToSuccess" {
+
+          let successVC = segue.destination as? SuccessViewController
+
+       }
+
+    }
+    
     /*
     // MARK: - Navigation
 

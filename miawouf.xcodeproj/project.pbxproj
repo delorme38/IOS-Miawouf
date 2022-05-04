@@ -21,6 +21,7 @@
 		7022F6C32819C07A007A69A0 /* Races.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7022F6C22819C07A007A69A0 /* Races.swift */; };
 		706093DC281C5F7E00BB8FFC /* CatFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 706093DB281C5F7E00BB8FFC /* CatFormViewController.swift */; };
 		706093E1281C647700BB8FFC /* CatSuccessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 706093E0281C647700BB8FFC /* CatSuccessViewController.swift */; };
+		7078BE432822C9CD00B2F4A3 /* PetModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7078BE422822C9CD00B2F4A3 /* PetModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +62,7 @@
 		7022F6C22819C07A007A69A0 /* Races.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Races.swift; sourceTree = "<group>"; };
 		706093DB281C5F7E00BB8FFC /* CatFormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatFormViewController.swift; sourceTree = "<group>"; };
 		706093E0281C647700BB8FFC /* CatSuccessViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatSuccessViewController.swift; sourceTree = "<group>"; };
+		7078BE422822C9CD00B2F4A3 /* PetModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,6 +158,7 @@
 			isa = PBXGroup;
 			children = (
 				7022F6C22819C07A007A69A0 /* Races.swift */,
+				7078BE422822C9CD00B2F4A3 /* PetModel.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -303,6 +306,7 @@
 				7022F6C32819C07A007A69A0 /* Races.swift in Sources */,
 				706093E1281C647700BB8FFC /* CatSuccessViewController.swift in Sources */,
 				706093DC281C5F7E00BB8FFC /* CatFormViewController.swift in Sources */,
+				7078BE432822C9CD00B2F4A3 /* PetModel.swift in Sources */,
 				701EF8042819CD3B0027CE93 /* WelcomeViewController.swift in Sources */,
 				7022F68C2819B70E007A69A0 /* AppDelegate.swift in Sources */,
 				701EF8092819CF8B0027CE93 /* FormViewController.swift in Sources */,
