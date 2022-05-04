@@ -7,29 +7,6 @@
 
 import UIKit
 
-extension FormViewController: UIPickerViewDataSource {
-    func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 1
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return dogRaces.count
-    }
-}
-
-extension FormViewController: UITextFieldDelegate {
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        textField.resignFirstResponder()
-        return true
-    }
-}
-
-extension FormViewController: UIPickerViewDelegate {
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return dogRaces[row]
-    }
-}
-
 class FormViewController: UIViewController {
 
     override func viewDidLoad() {
@@ -39,47 +16,17 @@ class FormViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-    @IBAction func nom(_ sender: Any) {
-    }
-    @IBAction func telephone(_ sender: Any) {
-    }
-    
     @IBOutlet weak var nomTextField: UITextField!
-    
     @IBOutlet weak var telephoneTextField: UITextField!
-    
     @IBOutlet weak var racePickerView: UIPickerView!
-    
     @IBOutlet weak var majoritySwitch: UISwitch!
-    
     @IBOutlet weak var genderSegmentedControl: UISegmentedControl!
-    
-    @IBAction func dismissKeyboard(_ sender: Any) {
-        nomTextField.resignFirstResponder()
+}
 
-        telephoneTextField.resignFirstResponder()
-    }
-    
-    
-    @objc func keyboardAppear(_ notification: Notification) {
-            guard let frame = notification.userInfo?[UIViewController.keyboardFrameEndUserInfoKey] as? NSValue else { return }
-            let keyboardFrame = frame.cgRectValue
-            if self.view.frame.origin.y == 0 {
-                self.view.frame.origin.y -= keyboardFrame.height
-            }
-        }
-
-    @objc func keyboardDisappear(_ notification: Notification) {
-        if self.view.frame.origin.y != 0 {
-            self.view.frame.origin.y = 0
-        }
-    }
-    
+extension FormViewController {
     @IBAction func validate(_ sender: Any) {
         let pet = createPetObject()
         checkPetStatus(pet)
-        
-
     }
     
     private func checkPetStatus(_ pet: Pet) {
@@ -109,23 +56,48 @@ class FormViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-
         if segue.identifier == "segueToSuccess" {
             let successVC = segue.destination as? SuccessViewController
             let pet = sender as? Pet
             successVC?.dog = pet
        }
-
     }
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
+
+extension FormViewController: UIPickerViewDataSource, UIPickerViewDelegate {
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return dogRaces.count
+    }
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return dogRaces[row]
+    }
+}
+
+extension FormViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    @IBAction func dismissKeyboard(_ sender: Any) {
+        nomTextField.resignFirstResponder()
+        telephoneTextField.resignFirstResponder()
+    }
+
+    @objc func keyboardAppear(_ notification: Notification) {
+            guard let frame = notification.userInfo?[UIViewController.keyboardFrameEndUserInfoKey] as? NSValue else { return }
+            let keyboardFrame = frame.cgRectValue
+            if self.view.frame.origin.y == 0 {
+                self.view.frame.origin.y -= keyboardFrame.height
+            }
+        }
+
+    @objc func keyboardDisappear(_ notification: Notification) {
+        if self.view.frame.origin.y != 0 {
+            self.view.frame.origin.y = 0
+        }
+    }
+}
+

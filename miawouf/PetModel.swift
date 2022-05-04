@@ -11,18 +11,18 @@ struct Pet {
     enum Gender {
         case male, female
     }
-    
-    enum Status {
-        case accepted
-        case rejected(String)
-    }
-
     var name: String?
     var hasMajority: Bool
     var phone: String?
     var race: String?
     var gender: Gender
-    
+}
+
+extension Pet {
+    enum Status {
+        case accepted
+        case rejected(String)
+    }
     var status: Status {
       if name == nil || name == "" {
         return .rejected("Vous n'avez pas indiqué votre nom !")
@@ -38,7 +38,4 @@ struct Pet {
       }
       return .accepted
     }
-  
-    // Rédigez votre code en dessous
-    
 }

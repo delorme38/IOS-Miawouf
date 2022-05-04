@@ -100,7 +100,6 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="27"/>
                                         <textInputTraits key="textInputTraits"/>
                                         <connections>
-                                            <action selector="nom:" destination="ajR-Bq-ba6" eventType="editingDidEnd" id="b6g-Sd-Xwn"/>
                                             <outlet property="delegate" destination="ajR-Bq-ba6" id="SNI-sK-pB5"/>
                                         </connections>
                                     </textField>
@@ -153,7 +152,6 @@
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" textContentType="tel"/>
                                                         <connections>
-                                                            <action selector="telephone:" destination="ajR-Bq-ba6" eventType="editingDidEnd" id="1lR-xC-xr9"/>
                                                             <outlet property="delegate" destination="ajR-Bq-ba6" id="9n2-uQ-BYD"/>
                                                         </connections>
                                                     </textField>
