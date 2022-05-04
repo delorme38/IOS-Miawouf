@@ -77,8 +77,24 @@ class FormViewController: UIViewController {
     
     @IBAction func validate(_ sender: Any) {
         let pet = createPetObject()
-        performSegue(withIdentifier: "segueToSuccess", sender: pet)
+        checkPetStatus(pet)
+        
 
+    }
+    
+    private func checkPetStatus(_ pet: Pet) {
+        switch pet.status {
+        case .accepted: performSegue(withIdentifier: "segueToSuccess", sender: pet)
+        case .rejected(let reason):
+            presentAlert(with: reason)
+        }
+    }
+    
+    private func presentAlert(with error: String) {
+        let alert = UIAlertController(title: "Erreur", message: error, preferredStyle: .alert)
+        let action = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+        alert.addAction(action)
+        present(alert, animated: true, completion: nil)
     }
     
     private func createPetObject() -> Pet {
